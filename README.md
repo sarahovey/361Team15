@@ -1,14 +1,19 @@
-Using Python 3
+# Notes to Team:
+This was built using Python3, Flask, and MySQL. The front-end is a template I got from here, 
+https://blackrockdigital.github.io/startbootstrap-grayscale/
+There are loads of commented-out examples in the index file that can be used to make all other pages
 
-To get started:
-If you use different versions of Python and libraries, install a virtual environment:
-http://flask.pocoo.org/docs/1.0/installation/
+Use these tutorials to get started:
+1. https://scotch.io/tutorials/getting-started-with-flask-a-python-microframework
+2. https://scotch.io/tutorials/build-a-crud-web-app-with-python-and-flask-part-one
 
-Packages:
-`pip3 install Flask`
+You'll need to
+- Set up + install your own instance of MySQL
+- Install Python3
+- Use pip to install flask and the other libaries the tutorial calls for
 
-If you're using Cloud9, add `--user` to the end of both of those commands
+I included a .sql file in the repo
+Flask does not read from this, but feel free to feed it to your instance of mysql via the command line to build your schema!
+If anyone else is using Cloud9 and needs help, I can show you how to use Flask and MySQL with c9 since it's slightly different
 
-
-Notes:
-I all libraries on the html side use CDNs
+These tutorials should get you started
