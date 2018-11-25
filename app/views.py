@@ -15,3 +15,10 @@ def nameroute(name):
 if __name__ == "__main__":
     #This is set for compabilitity with Cloud9
     app.run(host='0.0.0.0', port=8080, debug=True)
+
+    
+@app.route("/create_account")
+def create_account():
+    cur = mysql.connection.cursor()
+    cur.execute('''INSERT INTO users(email, username, password, role) VALUES(%s,%s, %s, %s)''', (email, username, password, role))
+    cur.commit()
