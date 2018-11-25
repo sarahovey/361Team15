@@ -2,7 +2,7 @@ CREATE TABLE users (
   ID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   email varchar(255),
   username varchar(255),
-  password varchar(MAX),
+  password varchar(255),
   rating INTEGER,
   role INTEGER,
   FOREIGN KEY(role) REFERENCES roles(id)
@@ -12,13 +12,13 @@ CREATE TABLE users (
 CREATE TABLE jobpost (
   ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
   title varchar(255),
-  description varchar(MAX),
+  description varchar(255),
   postedDate date,
   pickupDate date,
   dropoffDate date,
   pickupLocation varchar(255),
   dropoffLocation varchar(255),
-  deliveryInstructions varchar(MAX),
+  deliveryInstructions varchar(255),
   claimed bool,
   paid bool,
   poster int,
@@ -38,21 +38,21 @@ CREATE TABLE specialCategories (
   );
  
  CREATE TABLE jobs_categories (
-   job_id,
-   category_id,
+   job_id int,
+   category_id int,
    FOREIGN KEY(job_id) REFERENCES jobpost(id)
    ON DELETE CASCADE,
-   FOREIGN KEY(category_id) REFERENCES specialCategory(id)
+   FOREIGN KEY(category_id) REFERENCES specialCategories(id)
    ON DELETE CASCADE,
    PRIMARY KEY(job_id, category_id)
    );
    
  CREATE TABLE roles_users (
-   user_id,
-   role_id,
+   user_id int,
+   role_id int,
    FOREIGN KEY(user_id) REFERENCES users(id)
    ON DELETE CASCADE,
-   FOREIGN KEY(role_id) REFERENCES role(id)
+   FOREIGN KEY(role_id) REFERENCES roles(id)
    ON DELETE CASCADE,
    PRIMARY KEY(user_id, role_id)
    );
@@ -60,8 +60,8 @@ CREATE TABLE specialCategories (
  VALUES ('Refrigeration');
  
  INSERT INTO roles (type)
- VALUES ('Driver')
+ VALUES ('Driver');
  
-  INSERT INTO roles (type)
- VALUES ('Distributor')
+ INSERT INTO roles (type)
+ VALUES ('Distributor');
  
