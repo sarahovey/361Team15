@@ -2,7 +2,9 @@
 #Lyft but for truck drivers
 
 from flask import Flask, render_template
-app = Flask(__name__, static_folder='static')
+
+from app import app
+#app = Flask(__name__, static_folder='static')
 
 @app.route("/")
 def main():
