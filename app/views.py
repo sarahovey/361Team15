@@ -17,10 +17,11 @@ if __name__ == "__main__":
     #This is set for compabilitity with Cloud9
     app.run(host='0.0.0.0', port=8080, debug=True)
 
+#app = Flask(__name__)
     
-@app.route("/create_account", methods=['GET', 'POST'])
+@app.route("/create_account", methods=['POST'])
 def create_account():
-    input_email=request.form.get['inputEmail']
+    input_email=request.form['inputEmail']
     input_user=request.form['inputUser']
     input_password=request.form['inputPassword']
     conn = mysql.connector.connect(user='cs340_piccirim', password='1946', host='classmysql.engr.oregonstate.edu', database='cs340_piccirim')
