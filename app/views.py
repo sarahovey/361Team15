@@ -1,6 +1,7 @@
 #CS 361 Group 15
 #Lyft but for truck drivers
 
+import mysql.connector
 from flask import Flask, render_template
 #app = Flask(__name__, static_folder='static')
 from app import app
@@ -19,6 +20,7 @@ if __name__ == "__main__":
     
 @app.route("/create_account")
 def create_account():
-    cur = mysql.connection.cursor()
-    cur.execute('''INSERT INTO users(email, username, password, role) VALUES(%s,%s, %s, %s)''', (email, username, password, role))
-    cur.commit()
+    conn = mysql.connector.connect(user='cs340_piccirim', password='1946', host='classmysql.engr.oregonstate.edu', database='cs340_piccirim')
+    cur = conn.cursor()
+    cur.execute('''INSERT INTO users(email, username, password, role) VALUES(%s,%s, %s, %s)''', (inputEmail, inputUsername, inputPassword, role))
+    conn.commit()
