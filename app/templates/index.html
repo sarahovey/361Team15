@@ -140,7 +140,7 @@
 
             <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
             <h2 class="text-white mb-5">Sign Up</h2>
-                <form action="/create_account">
+                <form action="/create_account" method='POST'>
                     <label class="text-white">
                     <input type="radio" value="Driver" id="driverButton" name="userType"> Driver
                     </label>
@@ -156,7 +156,7 @@
                     <div class="form-group">
                         <input type="password" class="form-control mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputPassword" name="inputPassword" placeholder="Enter password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+                    <input type="submit" value="Submit" class="btn btn-primary mx-auto">
                 </form>
             </div>
         </div>
