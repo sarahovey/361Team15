@@ -2,7 +2,7 @@
 #Lyft but for truck drivers
 
 import mysql.connector
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
 #app = Flask(__name__, static_folder='static')
 from app import app
 @app.route("/")
@@ -22,10 +22,11 @@ if __name__ == "__main__":
 @app.route("/create_account", methods=['POST'])
 def create_account():
     input_email=request.form['inputEmail']
-    input_user=request.form['inputUser']
+    input_user=request.form['inputUsername']
     input_password=request.form['inputPassword']
+    role=request.form['userType']
     conn = mysql.connector.connect(user='cs340_piccirim', password='1946', host='classmysql.engr.oregonstate.edu', database='cs340_piccirim')
     cur = conn.cursor()
-    cur.execute('''INSERT INTO users(email, username, password, role) VALUES(%s,%s, %s, %s)''', (input_email, input_user, input_password, 1))
+    cur.execute('''INSERT INTO users(email, username, password, role) VALUES(%s,%s, %s, %s)''', (input_email, input_user, input_password, role))
     conn.commit()
     return render_template('index.html')
