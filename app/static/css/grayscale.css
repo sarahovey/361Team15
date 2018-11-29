@@ -185,7 +185,10 @@
 }
 
 @media (min-width: 992px) {
+
 .projects-section .featured-text {
+  .projects-section .featured-text {
+
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #64a19d;
   }
@@ -228,6 +231,7 @@
   letter-spacing: 0.15rem;
   border: 0;
 }
+
 
 .signup-label {
     width: 200px;
